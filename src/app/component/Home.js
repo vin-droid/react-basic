@@ -6,20 +6,30 @@ export class Home extends React.Component {
     constructor(props){
         super();
         this.state = {
-            user: props.user
+            user: props.user,
+            homeLink: "New Link"
+
         };
     }
     onClickOlder(){
         console.log(this.state.user);
         this.setState({
             user: {
-                name: this.state.user.name,
-                city: this.state.user.city,
-                age: this.state.user.age + 3,
-                hobbies: this.state.user.hobbies
+                
+                age: this.state.user.age < 90 ?  this.state.user.age + 3  :  this.state.user.age 
             }
-        })
+        });
+    }
+    onClickYounger(){
         console.log(this.state.user);
+        this.setState({
+            user: {
+                age: this.state.user.age > 10 ?  this.state.user.age - 3  :  this.state.user.age    
+            }
+        });
+    }
+    onHomeLinkChange(){
+        this.props.onLinkChange(this.state.homeLink);
     }
     render(){
         return(
@@ -41,26 +51,28 @@ export class Home extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-md-6 text-center">
+                        <button onClick={onHomeLinkChange}></button>
                         <h2>User Info</h2>
                         <div>
                         <label>Name:</label>
-                        <span>{this.state.user.name}</span>
+                        <span>{this.props.user.name}</span>
                         </div>
                         <br></br>
                         <div>
                         <label>Age:</label>
                         <span>{this.state.user.age}</span>
                         <button onClick={() => this.onClickOlder()} className="btn btn-primary">make me older</button>
+                        <button onClick={() => this.onClickYounger()} className="btn btn-primary">make me younger</button>
                         </div>
                         <br></br>
                         <div>
                         <label>City:</label>
-                        <span>{this.state.user.city}</span>
+                        <span>{this.props.user.city}</span>
                         </div>
                         <br></br>
                         <div>
                         <label>Hobies:</label>
-                        <ol>{this.state.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}</ol>
+                        <ol>{this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}</ol>
                         </div>
                     </div>
                 </div>
@@ -73,5 +85,6 @@ Home.propTypes = {
     name: PropTypes.string,
     age: PropTypes.number,
     city: PropTypes.string,
-    user: PropTypes.object
+    user: PropTypes.object,
+    changeLink: PropTypes.func
 };

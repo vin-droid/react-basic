@@ -4,6 +4,19 @@ import { Home } from "./component/Home";
 import { Header } from "./component/Header";
 
 class App extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            homeLink: "Home"
+        };
+    }
+
+    onLinkChange (newName){
+        this.setState({
+            homeLink: newName
+        });
+    }
+
     render() {
         var user = {
             name: "vineet",
@@ -13,8 +26,8 @@ class App extends React.Component {
         };
         var isUserShow = true;
         return ( <div>
-            <Header/>
-            <Home user={user} isUserShow={isUserShow}/>
+            <Header homeLink={this.state.homeLink}/>
+            <Home user={user} isUserShow={isUserShow} changeLink={this.onLinkChange.bind(this)}/>
             </div>
         );
     }
