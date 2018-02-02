@@ -7,7 +7,7 @@ export class Home extends React.Component {
         super();
         this.state = {
             user: props.user,
-            homeLink: "New Link"
+            homeLink: props.initialLink
 
         };
     }
@@ -29,7 +29,13 @@ export class Home extends React.Component {
         });
     }
     onHomeLinkChange(){
+        debugger;
         this.props.onLinkChange(this.state.homeLink);
+    }
+    inputHandler(event){
+        this.setState({
+            homeLink: event.target.value
+        });
     }
     render(){
         return(
@@ -51,7 +57,7 @@ export class Home extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-md-6 text-center">
-                        <button onClick={onHomeLinkChange}></button>
+                        <button onClick={() => this.onHomeLinkChange()}>changeLink</button>
                         <h2>User Info</h2>
                         <div>
                         <label>Name:</label>
@@ -74,6 +80,8 @@ export class Home extends React.Component {
                         <label>Hobies:</label>
                         <ol>{this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}</ol>
                         </div>
+                        <input value={this.state.homeLink} onChange={(event) => this.inputHandler(event)}></input>
+
                     </div>
                 </div>
             </div>
@@ -86,5 +94,6 @@ Home.propTypes = {
     age: PropTypes.number,
     city: PropTypes.string,
     user: PropTypes.object,
-    changeLink: PropTypes.func
+    onLinkChange: PropTypes.func,
+    initialLink: PropTypes.string
 };

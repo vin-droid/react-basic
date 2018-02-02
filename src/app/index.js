@@ -27,7 +27,7 @@ class App extends React.Component {
         var isUserShow = true;
         return ( <div>
             <Header homeLink={this.state.homeLink}/>
-            <Home user={user} isUserShow={isUserShow} changeLink={this.onLinkChange.bind(this)}/>
+            <Home user={user} isUserShow={isUserShow} onLinkChange={this.onLinkChange.bind(this)} initialLink={this.state.homeLink}/>
             </div>
         );
     }
