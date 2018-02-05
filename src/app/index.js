@@ -1,36 +1,19 @@
 import React from "react";
 import { render } from "react-dom";
-import { Home } from "./component/Home";
-import { Header } from "./component/Header";
+import { Home } from "./pages/home/index.jsx";
+import { Header } from "./component/layout/header/index";
+import { Footer } from "./component/layout/footer/index";
+import { Root } from "./component/layout/root";
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 class App extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            homeLink: "Home"
-        };
-    }
-
-    onLinkChange (newName){
-        this.setState({
-            homeLink: newName
-        });
-    }
-
-    render() {
-        var user = {
-            name: "vineet",
-            age: 24,
-            city: "Delhi",
-            hobbies: ["Playing Cricket", "Listening Songs", "Reading"]
-        };
-        var isUserShow = true;
-        return ( <div>
-            <Header homeLink={this.state.homeLink}/>
-            <Home user={user} isUserShow={isUserShow} onLinkChange={this.onLinkChange.bind(this)} initialLink={this.state.homeLink}/>
-            </div>
+    render(){
+        return(
+            <Root>
+                <Home></Home>
+            </Root>
         );
     }
 }
 
-render( < App/> , window.document.getElementById("app"));
+render( <App /> , window.document.getElementById("app"));
