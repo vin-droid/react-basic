@@ -9,30 +9,24 @@ import { About } from "./pages/about/index.jsx";
 import { Contact } from "./pages/contact/index.jsx";
 import { Portfolio } from "./pages/portfolio/index.jsx";
 import { Services } from "./pages/services/index.jsx";
-import { BrowserRouter } from "react-router-dom";
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {IndexRoute, browserHistory, Switch } from 'react-router';
 
 class App extends React.Component {
     render(){
         return(
-       
-            <Router history={hashHistory}>
-                <Route path="/" component={Root}>
-                    <IndexRoute component={Home}/>
-                    <Route path="blog" component={Blog}>
-                    </Route>
-                    <Route path="contact" component={Contact}>
-                    </Route>
-                    <Route path="portfolio" component={Portfolio}>
-                    </Route>
-                    <Route path="about" component={About}>
-                    </Route>
-                    <Route path="services" component={Services}>
-                    </Route>
-                    <Route path="home" component={Home}>
-                    </Route>
-
-                </Route>
+            <Router>
+                <Root>
+                    <Route exact path={"/"} component={Home}/>
+                    <Switch>
+                        <Route path="/blog" component={Blog}/>
+                        <Route path="/contact" component={Contact}/>
+                        <Route path="/portfolio" component={Portfolio}/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/services" component={Services}/>
+                        <Route path="/home" component={Home} />
+                    </Switch>
+                </Root>
             </Router>
         );
     }

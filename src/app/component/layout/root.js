@@ -6,15 +6,15 @@ import { Footer } from './footer/index';
 export class Root extends React.Component {
     constructor(props){
         super();
-
     }
 
     render(){
-        return( <div>
-                    <Header/>
-                        {this.props.children}
-                    <Footer/>
-                </div>
+        return( 
+            <div>
+                <Header/>
+                {this.props.children}
+                <Footer/>
+            </div>
         );
     }
 }

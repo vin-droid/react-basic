@@ -21,7 +21,7 @@ export class Blog extends React.Component{
         <div className="col-md-4 text-center">
             <div className="blog-inner">
                 <a href="#">
-                    <img className="img-responsive" src="images/image_4.jpg" alt="Blog"/></a>
+                    <img className="img-responsive" src="UI/images/image_4.jpg" alt="Blog"/></a>
                     <div className="desc">
                         <h3>
                             <a href="#">New iPhone 6 Released</a>
@@ -39,7 +39,7 @@ export class Blog extends React.Component{
                     <div className="col-md-12">
                         <div className="blog-inner">
                             <a href="#">
-                                <img className="img-responsive" src="images/image_7.jpg" alt="Blog"/></a>
+                                <img className="img-responsive" src="UI/images/image_7.jpg" alt="Blog"/></a>
                                 <div className="desc">
                                     <h3>
                                         <a href="#">New iPhone 6 Released</a>
@@ -59,7 +59,7 @@ export class Blog extends React.Component{
                 <div className="col-md-4 text-center">
                     <div className="blog-inner">
                         <a href="#">
-                            <img className="img-responsive" src="images/image_5.jpg" alt="Blog"/></a>
+                            <img className="img-responsive" src="UI/images/image_5.jpg" alt="Blog"/></a>
                             <div className="desc">
                                 <h3>
                                     <a href="#">Beans</a>
@@ -77,7 +77,7 @@ export class Blog extends React.Component{
                             <div className="col-md-12">
                                 <div className="blog-inner">
                                     <a href="#">
-                                        <img className="img-responsive" src="images/image_9.jpg" alt="Blog"/></a>
+                                        <img className="img-responsive" src="UI/images/image_9.jpg" alt="Blog"/></a>
                                         <div className="desc">
                                             <h3>
                                                 <a href="#">New iPhone 6 Released</a>
@@ -97,7 +97,7 @@ export class Blog extends React.Component{
                         <div className="col-md-4 text-center">
                             <div className="blog-inner">
                                 <a href="#">
-                                    <img className="img-responsive" src="images/image_6.jpg" alt="Blog"/></a>
+                                    <img className="img-responsive" src="UI/images/image_6.jpg" alt="Blog"/></a>
                                     <div className="desc">
                                         <h3>
                                             <a href="#">Bookmarksgrove right</a>
@@ -115,7 +115,7 @@ export class Blog extends React.Component{
                                     <div className="col-md-12">
                                         <div className="blog-inner">
                                             <a href="#">
-                                                <img className="img-responsive" src="images/image_10.jpg" alt="Blog"/></a>
+                                                <img className="img-responsive" src="UI/images/image_10.jpg" alt="Blog"/></a>
                                                 <div className="desc">
                                                     <h3>
                                                         <a href="#">New iPhone 6 Released</a>
@@ -124,7 +124,7 @@ export class Blog extends React.Component{
                                                         Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
                                                         right at the coast of the Semantics, a large language ocean.</p>
                                                     <p>
-                                                        <a href="#" className="btn btn-primary btn-outline with-arrow">Read More<i class="icon-arrow-right"></i>
+                                                        <a href="#" className="btn btn-primary btn-outline with-arrow">Read More<i className="icon-arrow-right"></i>
                                                         </a>
                                                     </p>
                                                 </div>
