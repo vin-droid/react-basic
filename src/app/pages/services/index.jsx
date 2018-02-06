@@ -1,7 +1,7 @@
-import {React} from "react";
+import React from "react";
 import {render} from "react-dom";
 
-export class Blog extends React.Component {
+export class Services extends React.Component {
     render() {
         return (
 < div id = "fh5co-main-services-section" > <div className="container">

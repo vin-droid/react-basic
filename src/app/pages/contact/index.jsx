@@ -1,7 +1,7 @@
-import {React} from "react";
+import React from "react";
 import {render} from "react-dom";
 
-export class Blog extends React.Component {
+export class Contact extends React.Component {
     render() {
         return (
     < div id = "fh5co-contact-section" > 
@@ -36,16 +36,15 @@ export class Blog extends React.Component {
                 </li>
             </ul>
         </div>
-        <div
-            className="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+        <div className="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
             <div className="row">
                 <div className="col-md-6">
                     <div className="form-group">
-                        <input className="form-control" placeholder="Name" type="text"/></div>
+                        <input className="form-control" placeholder="Name" type="text" /></div>
                     </div>
                     <div className="col-md-6">
                         <div className="form-group">
-                            <input className="form-control" placeholder="Email" type="text"/></div>
+                            <input className="form-control" placeholder="Email" type="text" /></div>
                         </div>
                         <div className="col-md-12">
                             <div className="form-group">
@@ -60,13 +59,12 @@ export class Blog extends React.Component {
                         </div>
                         <div className="col-md-12">
                             <div className="form-group">
-                                <input value="Send Message" className="btn btn-primary" type="submit"></div>
+                                <input value="Send Message" className="btn btn-primary" type="submit"/></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         );
     }

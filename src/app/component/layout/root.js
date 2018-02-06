@@ -10,12 +10,11 @@ export class Root extends React.Component {
     }
 
     render(){
-        return(
-            <Root>
-                <Header/>
-                    {this.props.children}
-                <Footer/>
-            </Root>
+        return( <div>
+                    <Header/>
+                        {this.props.children}
+                    <Footer/>
+                </div>
         );
     }
 }
