@@ -1208,8 +1208,23 @@ h1, h2, h3, h4, h5, h6, figure {
 .divStyle6 {
   background-image: url(../images/image_6.jpg)
 }
+.divStyle4 {
+  background-image: url(../images/image_4.jpg)
+}
+.divStyle5 {
+  background-image: url(../images/image_5.jpg)
+}
+.divStyle7 {
+  background-image: url(../images/image_7.jpg)
+}
 .divStyle8 {
   background-image: url(../images/image_8.jpg)
+}
+.divStyle9 {
+  background-image: url(../images/image_9.jpg)
+}
+.divStyle10 {
+  background-image: url(../images/image_10.jpg)
 }
 .divStyle3 {
   background-image: url(../images/image_3.jpg)
@@ -1217,5 +1232,9 @@ h1, h2, h3, h4, h5, h6, figure {
 .divStyle2 {
   background-image: url(../images/image_2.jpg)
 }
+.divStyle1 {
+  background-image: url(../images/image_1.jpg)
+}
+
 
 /*# sourceMappingURL=style.css.map */

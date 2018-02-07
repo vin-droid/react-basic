@@ -23,7 +23,7 @@ export class About extends React.Component{
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="about-inner">
-                                        <img className="img-responsive" src="images/image_about.jpg" alt="About" />
+                                        <img className="img-responsive" src="UI/images/image_1.jpg" alt="About" />
                                         <h3>History</h3>
                                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                                             Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
