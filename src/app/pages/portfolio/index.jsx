@@ -22,8 +22,8 @@ export class Portfolio extends React.Component {
             <div className="work-inner">
                 <a
                     href="#"
-                    className="work-grid"
-                    style={divStyle1}></a>
+                    className="work-grid divStyle1"
+                    ></a>
                 <div className="desc">
                     <h3>
                         <a href="#">Work with love</a>
@@ -36,8 +36,8 @@ export class Portfolio extends React.Component {
             <div className="work-inner">
                 <a
                     href="#"
-                    className="work-grid"
-                    style={divStyle2}></a>
+                    className="work-grid divStyle2"
+                  ></a>
                 <div className="desc">
                     <h3>
                         <a href="#">Work with love</a>
@@ -50,8 +50,8 @@ export class Portfolio extends React.Component {
             <div className="work-inner">
                 <a
                     href="#"
-                    className="work-grid"
-                    style={divStyle3}></a>
+                    className="work-grid divStyle3"
+                    ></a>
                 <div className="desc">
                     <h3>
                         <a href="#">Work with love</a>
@@ -64,7 +64,7 @@ export class Portfolio extends React.Component {
             <div className="work-inner">
                 <a
                     href="#"
-                    className="work-grid" style = {divStyle4} > </a>
+                    className="work-grid divStyle4"  > </a>
                 <div className="desc">
                     <h3>
                         <a href="#">Work with love</a>
@@ -77,8 +77,8 @@ export class Portfolio extends React.Component {
             <div className="work-inner">
                 <a
                     href="#"
-                    className="work-grid"
-                    style={divStyle5}></a>
+                    className="work-grid divStyle5"
+                    ></a>
                 <div className="desc">
                     <h3>
                         <a href="#">Work with love</a>
@@ -91,8 +91,8 @@ export class Portfolio extends React.Component {
             <div className="work-inner">
                 <a
                     href="#"
-                    className="work-grid"
-                    style={divStyle6}></a>
+                    className="work-grid divStyle6"
+                    ></a>
                 <div className="desc">
                     <h3>
                         <a href="#">Work with love</a>

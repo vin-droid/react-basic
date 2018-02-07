@@ -7,9 +7,8 @@ export const Header = (props) => {
         <header id="fh5co-header" role="banner">
 		<div className="container">
 			<div className="header-inner">
-				<h1><i className="sl-icon-energy"></i><a href="index.html">Lesser</a></h1>
+				<h1><i className="sl-icon-energy"></i><Link to="/">Lesser</Link></h1>
 				<nav role="navigation">
-					<Router>
 					<ul>
 						<li><Link className="active"  to="/">Home</Link></li>
 						<li><Link  to="/blog">Blog</Link></li>
@@ -18,7 +17,6 @@ export const Header = (props) => {
 						<li><Link  to="/about">About</Link></li>
 						<li><Link  to="/contact">Contact</Link></li>
 					</ul>
-					</Router>
 				</nav>
 			</div>
 		</div>
