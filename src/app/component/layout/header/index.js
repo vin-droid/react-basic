@@ -16,6 +16,7 @@ export const Header = (props) => {
 						<li><NavLink activeClassName={"active"} to="/services">Services</NavLink></li>
 						<li><NavLink activeClassName={"active"} to="/about">About</NavLink></li>
 						<li><NavLink activeClassName={"active"} to="/contact">Contact</NavLink></li>
+						<li><NavLink activeClassName={"active"} to="/todo">Todo</NavLink></li>
 					</ul>
 				</nav>
 			</div>

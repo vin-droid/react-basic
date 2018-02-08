@@ -7,6 +7,7 @@ import { About } from "./pages/about/index.jsx";
 import { Contact } from "./pages/contact/index.jsx";
 import { Portfolio } from "./pages/portfolio/index.jsx";
 import { Services } from "./pages/services/index.jsx";
+import { TodoApp } from "./pages/todo/index.jsx";
 import { Match } from 'react-router'; 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import { IndexRoute, browserHistory, Switch, Redirect } from 'react-router';
@@ -24,6 +25,7 @@ class App extends Component {
                         <Route path="/about" component={About}/>
                         <Route path="/services" component={Services}/>
                         <Route path="/home" component={Home} />
+                        <Route path="/todo" component={TodoApp} />
                     </Switch>
                 </Root>
             </Router>
