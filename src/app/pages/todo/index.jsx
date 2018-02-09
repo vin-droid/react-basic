@@ -8,78 +8,74 @@ export class TodoApp extends Component {
         super();
         UniqueId.enableUniqueIds(this);
         this.state = {
-            tasks: [],
-            taskNote: "",
-            buttonText: "Add Task",
-            enableEditTask: false
+            tasks: [
+                {
+                    id: this.nextUniqueId(),
+                    taskNote: "Task1"
+                },
+                {
+                    id: this.nextUniqueId(),
+                    taskNote: "Task2"
+                },
+                {
+                    id: this.nextUniqueId(),
+                    taskNote: "Task3"
+                },
+                {
+                    id: this.nextUniqueId(),
+                    taskNote: "Task4"
+                }
+            ]
         }
     }
 
-    updateTaskNote(event){
-        this.setState({
-            taskNote: event.target.value
-        });
-    }
-    deleteTask(taskId){
-        debugger;
+    addTaskToList(task){
         let tasks = this.state.tasks;
-        tasks.splice(taskId, 1);
+        tasks.push(task);
         this.setState({
             tasks: tasks
         });
-        console.log("Task Successfully deleted.") ;
+        this.textInput.value = "";
+        this.textInput.focus();
     }
 
-    addTask(){
-        if (this.state.taskNote === "") { return }
-        let tasks = this.state.tasks;
-        let task = {
-            id: this.nextUniqueId(),
-            taskNote: this.state.taskNote
-        }
-        tasks.push(task);
-        this.setState({
-            buttonText: "Add Task",
-            taskNote: "",
-        });
-        this.textInput.focus();
-        console.log(this.state.tasks);
-        console.log("New Task Successfully added.") ;
-    }
-
-    editTask(taskId){
-        let tasks = this.state.tasks;
-        let task = tasks.splice(taskId, 1);
-        this.setState({
-            tasks: tasks,
-            taskNote: task.taskNote,
-            enableEditTask: true,
-            buttonText: "Update Task"
-        });
-        this.textInput.focus();
-        console.log("Task Successfully updated.") ;
-    }
-    
-    updateTask(e, taskId) {
+    updateTaskList(task){
+        debugger;
         let tasks = Object.assign({}, this.state.tasks);
-        let index = this.state.tasks.findIndex((task) => {
-            return task.id === taskId
-        })
-        let task = tasks[index]
-        task.taskNote = this.state.taskNote;
+        let index = this.state.tasks.findIndex((t) => {
+                return t.id === task.id
+            })
+            debugger;
         tasks[index] = task;
-
         this.setState({
-            tasks: tasks,
-            buttonText: "Update Task"
+            tasks: tasks
         });
-        this.textInput.focus();
+        debugger;
         console.log("Task Successfully updated.");
     }
+
+    createTask(e){
+        e.preventDefault();
+        let task = {
+            id: this.nextUniqueId(),
+            taskNote:  this.textInput.value
+        }
+        this.addTaskToList(task)
+    }
+
+    deleteTask(taskId) {
+        let tasks = this.state.tasks;
+        tasks.splice(taskId, 1);
+        this.setState({tasks: tasks});
+        console.log("Task Successfully deleted.");
+    }
+
     render(){
         let tasks = this.state.tasks.map((task, index) => {
-            return <Task key={index} taskNote={task.taskNote}
-                deleteTask={() => this.deleteTask(this, index)} editTask={() => this.editTask(index)} enableEditTask = {this.enableEditTask}
+            return <Task    key={task.id} 
+                            taskId={task.id} 
+                            taskNote={task.taskNote}
+                            deleteTask={() => this.deleteTask(task.id)}
             />
         } );
 
@@ -89,15 +85,16 @@ export class TodoApp extends Component {
                     <div className="row">
                         <div className="col-md-6 col-md-offset-3 text-center fh5co-heading">
                             <h2>Todo Application</h2>
-                            <ul className="fh5co-social">
-                            {tasks}
-                            </ul>
-                           <input type="text"
-                            ref={((input) => { this.textInput = input})}
-                            value={this.state.taskNote}
-                            onChange={event => this.updateTaskNote(event)}
-                           />
-                           <button onClick={() => { this.state.enableEditTask ? this.updateTask(this) : this.addTask() }} className="btn btn-sm btn-primary"> {this.state.buttonText} </button>
+                            <form onSubmit={(e) => this.createTask(e)}>
+                            <input type="text"
+                                ref={((input) => { this.textInput = input})}                            />
+                            <button type="submit" className="btn btn-sm btn-primary"> Create Task </button>
+                            </form>
+                            <table>
+                                <tbody>
+                                {tasks}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
