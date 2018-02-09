@@ -7,17 +7,17 @@ export class Task extends Component {
 
     render() {
         return (
-            <div >
-                {this.props.taskNote}
+            <li id={this.props.key}>
+               <span> {this.props.taskNote}</span>
                 <button onClick={this.props.editTask} className="btn btn-xs btn-info">Edit task</button>
                 <button onClick={this.props.deleteTask} className="btn btn-xs btn-danger">Remove task</button>
-            </div>
+            </li>
         );
     }
 }
 
 Task.propType = {
-    taskId: PropTypes.number,
+    enableEditTask: PropTypes.bool,
     taskNote : PropTypes.string,
     deleteTask: PropTypes.func,
     editTask: PropTypes.func
